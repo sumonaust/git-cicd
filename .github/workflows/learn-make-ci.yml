@@ -3,12 +3,12 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 
 jobs:
-  create-make:
+  make-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - shell: bash
         run:  |
-          sudo apt update
-          sudo apt install make
-          make --version
+          sudo apt-get update
+          sudo apt-get install make
+          make -v
