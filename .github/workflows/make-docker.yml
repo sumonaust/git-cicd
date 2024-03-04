@@ -1,0 +1,12 @@
+name: docker-make-ci
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+
+jobs:
+  docker-make:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - shell: bash
+        run:  |
+          make docker-build

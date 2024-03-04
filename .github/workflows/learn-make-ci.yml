@@ -1,0 +1,14 @@
+name: learn-make-ci
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+
+jobs:
+  create-make:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - shell: bash
+        run:  |
+          sudo apt update
+          sudo apt install make
+          make --version
